@@ -6,6 +6,17 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('about');
+  this.route('contact');
+
+  this.route('admin', function() {
+    this.route('invitations');
+  });
+  this.route('libraries', function() {
+    this.route('new');
+    //this.route('edit');
+    this.route('edit', { path: '/:library_id/edit' });
+  });
 });
 
 export default Router;
